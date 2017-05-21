@@ -182,7 +182,6 @@ void achaL (Mat p, int l, int c){
 			temp = 0;
 		}
 	}
-	cout <<ultimal;
 
 }
 
@@ -199,8 +198,8 @@ int main (int argc, char *argv[]){
 	
 	
 	threshold(teste, teste, 220, 255,0);
-	erosao(teste);
-	//achaL(teste,83,0);
+	//erosao(teste);
+	achaL(teste,0,0);
 	//Mat ver = teste(Range(110,140), Range(114,205));
 	//caractere = teste.at<uchar>(Point(77,186));
 
