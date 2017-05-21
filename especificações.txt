@@ -1,0 +1,36 @@
+Plataforma: PC/Linux
+Linguagem: C++
+Objetivo: Identificar e extrair textos a partir de um PDF.
+Fonte: https://www.codeproject.com/Articles/15304/Unicode-Optical-Character-Recognition
+
+Passos:
+	Treinamento da MLP
+		Inicializar a rede com os parâmetros
+			Learning rate = 150
+			Sigmoid Slope = 0.014
+			Weight bias = 30
+			Number of Epochs = 300-600
+			Mean error threshold value = 0.0002
+		Inicializar os pesos com valores aleatórios entre +-bias
+		Carrega as imagens de entrada com seus respectivos textos
+		
+	Preparação
+		Ler PDF da linha de comando
+		Converter para um vetor de imagens
+	Pré-processamento
+		Converter para escala de cinzas
+		Limiarizar
+			Calcular o threshold usando Otsu
+			Fazer a limiarização local
+		Fazer a transformação de pose
+	Detecção
+		Encontrar linhas (limites em y)
+		Encontra caracteres (limites em x)
+		Converte a submatriz do caractere pra escala padrão de entrada do MLP
+	Reconhecimento (para cada caractere)
+		Envia a matriz para o MLP
+		Salva o caractere reconhecido na string de saída temporária
+		(Fase de aprendizado) Compara com o resultado esperado e propaga os erros
+	Apresentação
+		(Se em idioma suportado) aplica função de distância e faz a correção ortográfica automática
+		Salva resultados em .txt e exibe na tela	

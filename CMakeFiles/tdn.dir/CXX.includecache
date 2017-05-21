@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/Documents/multimidia/projeto/main.cpp
+iostream
+-
+string.h
+-
+stdlib.h
+-
+util.hpp
+/root/Documents/multimidia/projeto/util.hpp
+
+/root/Documents/multimidia/projeto/util.hpp
+stdlib.h
+-
+
