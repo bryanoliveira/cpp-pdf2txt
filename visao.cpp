@@ -96,6 +96,7 @@ void acharJL(Mat p, int linhaI, int linhaF, int *colunaI, int *colunaF){
 	}
 }
 
+//Função para ajustar a ultima linha com a linha do maior caractere (Exemplo: g)
 void ajusta(Mat p, int *linhaF, int colunaI, int colunaF){
 	int i,mm,achou,cond;
 	unsigned char vix;
@@ -118,6 +119,9 @@ void ajusta(Mat p, int *linhaF, int colunaI, int colunaF){
 	}
 }
 
+
+//Função que encontra os caracteres
+//Retorno: Matriz com somente 1 caractere
 Mat janelaCaractere(Mat p, int linhaI, int linhaF, int *colunaiC, int *colunafC){
 	int i,op,cond,mm;
 	unsigned char vix;
@@ -163,7 +167,7 @@ Mat janelaCaractere(Mat p, int linhaI, int linhaF, int *colunaiC, int *colunafC)
 	return p;
 }
 
-void achaL (Mat p){
+void achaCaracteres (Mat p){
 	int i,j,op;
 	int ultimal,primeiral,ultimac,primeirac,ultimacC,primeiracC;
 	Mat ver;
@@ -228,20 +232,10 @@ int main (int argc, char *argv[]){
 	unsigned char caractere;
 	int i,j,l,m,k,deu=0;
 
-
 	cvtColor(teste,teste,CV_BGR2GRAY);
-
-	
 	
 	threshold(teste, teste, 220, 255,0);
-	//erosao(teste);
-	achaL(teste);
-	//Mat ver = teste(Range(110,140), Range(114,205));
-	//caractere = teste.at<uchar>(Point(77,186));
+	achaCaracteres(teste);
 
-	//cout << "AKI E: "<<(int)caractere;
-
-	//imshow("aa",teste);
-	//waitKey(0);
 	return (0);
 }
