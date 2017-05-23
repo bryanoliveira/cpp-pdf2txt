@@ -167,10 +167,46 @@ Mat janelaCaractere(Mat p, int linhaI, int linhaF, int *colunaiC, int *colunafC)
 	return p;
 }
 
+//Função para vetorizar a janela do caractere
+void vetoriza(Mat p, int *vet){
+	int i,j,k;
+	unsigned char l;
+
+	k=0;
+	for (i=0;i<20;i++){
+		for (j=0;j<30;j++){
+			l = p.at<uchar>(i,j);
+			if ((int)l == 255){			
+				vet[k] = 1;
+			} else vet[k] = 0;
+			k++;
+		}
+	}
+
+
+}
+
+//Função para desvetorizar(usada para teste apenas)
+void desvet(int *Vet){
+	Mat p(20,30,DataType<uchar>::type);
+	int i,j,k;
+	k=0;
+	for (i=0;i<20;i++){
+		for (j=0;j<30;j++){
+			p.at<uchar>(i,j) = (unsigned char)Vet[k];
+			k++;
+		}
+	}
+	imshow("aaa",p);
+	waitKey(0);
+
+}
+
 void achaCaracteres (Mat p){
-	int i,j,op;
+	int i,j,pp,op,imagem[601];
 	int ultimal,primeiral,ultimac,primeirac,ultimacC,primeiracC;
 	Mat ver;
+	Mat red(30,20,DataType<uchar>::type);
 	
 	//Inicializa a primeira linha e a primeira coluna com 0, ou seja, ira começar a procurar a partir do pixel (0,0)
 	primeiral = 0;
@@ -212,9 +248,13 @@ void achaCaracteres (Mat p){
 		while (primeiracC<ultimac){
 			//A matriz ver é a matriz de cada caractere
 			ver = janelaCaractere(p, primeiral,ultimal,&primeiracC,&ultimacC);
-			//Aqui entra o algoritmo do Marcos pegando a matriz ver como parametro
-			imshow("ca",ver);
-			waitKey(0);
+			//Redimensiona a janela para ficar 30x20
+			resize(ver, red, Size(30,20), 0, 0, INTER_LINEAR);
+			threshold(red, red, 240, 255,0);
+			//Vetoriza a imagem
+			vetoriza(red,imagem);
+			//Aqui entra o algoritmo do Marcos usando o vetor imagem como parametro
+			
 			//Obs.: As duas proximas linhas SÃO NECESSARIAS
 			ultimacC++;
 			primeiracC = ultimacC;
