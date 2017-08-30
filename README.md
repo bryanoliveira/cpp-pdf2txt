@@ -1,26 +1,12 @@
-# tdn
-# Terra de ninguém
-## Clonar o projeto na sua máquina
-```
-$ git clone https://github.com/bryanlincoln/tdn.git
-```
-## Adiciona a origem para sincronizar os servidores
-```
-$ git remote add origin https://github.com/bryanlincoln/tdn.git
-```
-## Mostra quais arquivos foram alterados
-```
-$ git status
-```
-## Adiciona o arquivo file_A no commit a ser especificado
-```
-$ git add file_A
-```
-## Comente as mudanças que você fez nesse arquivo
-```
-$ git commit -m "file_A something"
-```
-## Manda as alterações pro servidor
-```
-$ git push origin master                            
-```
+# PDF 2 Text Converter
+This is a PDF to text converter prototype.
+This project converts scanned files (.pdf) into a set of images, reads the containing characters using a multilayer perceptron, runs an autocorrector and then writes a .txt file with the results.
+
+## Usage
+You have to have pdftoppm and build-essential running on a GNU/Linux distribution.
+
+## Notes
+
+Please note that this project is no longer being updated and this version is incomplete (the remaining scripts don't talk to each other but its main idea is already implemented). Some of the code may be written in portuguese.
+
+You can contact me at bryanufg@gmail.com if you have any doubts about the code.
