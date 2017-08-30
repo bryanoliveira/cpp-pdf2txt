@@ -6,11 +6,11 @@ This project converts scanned files (.pdf) into a set of images, reads the conta
 
 ### MLP Training
 - Initialize with the following parameters:
-> Learning rate = 150
-> Sigmoid Slope = 0.014
-> Weight bias = 30
-> Number of Epochs = 300-600
-> Mean error threshold value = 0.0002
+   - Learning rate = 150
+   - Sigmoid Slope = 0.014
+   - Weight bias = 30
+   - Number of Epochs = 300-600
+   - Mean error threshold value = 0.0002
 - Initialize random weights
 - Load training sets
 ### Preparation
