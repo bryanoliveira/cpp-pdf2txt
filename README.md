@@ -41,5 +41,3 @@ You have to have pdftoppm and build-essential running on a GNU/Linux distributio
 ## Notes
 
 Please note that this project is no longer being updated and this version is incomplete (the remaining scripts don't talk to each other but its main idea is already implemented). Some of the code may be written in portuguese.
-
-You can contact me at bryanufg@gmail.com if you have any doubts about the code.
